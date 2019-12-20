@@ -13,10 +13,29 @@ android {
             abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86", "arm64-v8a", "x86_64"
         }
     }
+    signingConfigs {
+        release {
+            storeFile file("app.jks")
+            storePassword "123456"
+            keyAlias "app"
+            keyPassword "123456"
+        }
+    }
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            minifyEnabled true
+            //打开资源压缩（去除没有引用的资源）
+            shrinkResources true
+            //像Google Play强制要求开发者上传的应用必须是经过zipAlign的，zipAlign可以让安装包中的资源按4字节对齐，这样可以减少应用在运行时的内存消耗。
+            zipAlignEnabled true
+            signingConfig = signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            //是否混淆
+            minifyEnabled true
+            signingConfig = signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
     repositories {

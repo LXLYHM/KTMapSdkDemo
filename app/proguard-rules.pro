@@ -19,3 +19,40 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+-keep class mapsdk.seeklane.com.**{*;}
+-keep class org.greenrobot.eventbus.**{*;}
+-keep class com.keytop.map.** {*;}
+#--------------------- OkHttp3
+-dontwarn okhttp3.logging.**
+-keep class okhttp3.internal.**{*;}
+-dontwarn okio.**
+#--------------------- retrofit2
+-dontwarn retrofit2.**
+-keep class retrofit2.** { *; }
+-dontwarn okio.**
+-dontwarn javax.annotation.**
+#--------------------- Gson
+-keep class com.google.gson.stream.** { *; }
+-keepattributes EnclosingMethod
+#--------------------- 高德定位3D 地图 V5.0.0之后：
+-keep   class com.amap.api.maps.**{*;}
+-keep   class com.autonavi.**{*;}
+-keep   class com.amap.api.trace.**{*;}
+#---------------------定位
+-keep class com.amap.api.location.**{*;}
+-keep class com.amap.api.fence.**{*;}
+-keep class com.autonavi.aps.amapapi.model.**{*;}
+#---------------------导航
+-keep class com.amap.api.navi.**{*;}
+-keep class com.autonavi.**{*;}
+#---------------------内置语音 V5.6.0之后
+-keep class com.alibaba.idst.nls.** {*;}
+-keep class com.google.**{*;}
+-keep class com.nlspeech.nlscodec.** {*;}
+
+-dontwarn com.amap.api.**
+-dontwarn com.a.a.**
+-dontwarn com.autonavi.**
+-keep class com.amap.api.** {*;}
+-keep class com.autonavi.** {*;}
+-keep class com.a.a.** {*;}
