@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
                 /**
                  * context 对象
                  * aMapKey 高德地图key
+                 * isRelease 环境参数 isRelease true生产环境；false测试环境 ，可传可不传默认生产环境
                  */
                 KTMainActivity.launch(MainActivity.this, "0874b38a760be4463840f3a7b9ba68c9");
             }
